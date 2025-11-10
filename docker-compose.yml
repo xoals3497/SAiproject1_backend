@@ -1,0 +1,15 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17 #25.11.04 기준 최신 pgvector버전
+    container_name: SAi_chatdb
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: chatdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
